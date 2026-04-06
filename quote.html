@@ -42,7 +42,7 @@ body{margin:0;font-family:'Inter',sans-serif;background:#020617;color:#fff;displ
 
 .right{padding:50px;background:#0b1220}
 
-/* ✅ UPDATED textarea */
+/* Inputs */
 input, textarea{
   width:100%;
   padding:14px;
@@ -54,10 +54,12 @@ input, textarea{
   outline:none;
 }
 
+/* ✅ Smooth animated textarea */
 textarea{
-  resize:none;              /* ❌ removes slider */
-  min-height:120px;         /* starting height */
-  overflow:hidden;          /* prevents scrollbars */
+  resize:none;
+  min-height:120px;
+  overflow:hidden;
+  transition:height 0.2s ease;
 }
 
 input:focus, textarea:focus{border:1px solid #2563eb}
@@ -205,12 +207,12 @@ const btn = document.querySelector("button");
 const successMsg = document.querySelector(".success");
 const errorMsg = document.querySelector(".error");
 
-/* ✅ FIX: ensures page shows properly when navigating back */
+/* Back button fix */
 window.addEventListener("pageshow", function(){
   document.body.style.opacity = "1";
 });
 
-/* ✅ Auto-expand textarea */
+/* ✅ Smooth auto-expand */
 const textarea = document.querySelector("textarea");
 textarea.addEventListener("input", function(){
   this.style.height = "auto";
@@ -237,7 +239,7 @@ form.addEventListener("submit", async function(e) {
     successMsg.classList.add("show");
     errorMsg.textContent = "";
     form.reset();
-    textarea.style.height = "120px"; /* reset height */
+    textarea.style.height = "120px";
   } else {
     errorMsg.textContent = "Something went wrong. Please try again.";
   }
