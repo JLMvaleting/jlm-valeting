@@ -27,6 +27,7 @@ border-bottom:1px solid rgba(255,255,255,0.05)
 }
 
 .logo img{height:75px;transition:0.3s}
+.logo img:hover{transform:scale(1.05);filter:drop-shadow(0 0 8px rgba(37,99,235,0.5))}
 
 nav a{color:#cbd5f5;margin-left:25px;text-decoration:none}
 
@@ -37,10 +38,11 @@ display:flex;gap:20px;font-size:13px;color:#cbd5f5
 
 /* HERO */
 .hero{
-min-height:100vh;
+height:100vh;
 background:url("hero.jpg") center/cover no-repeat;
 display:flex;align-items:center;padding:0 8%;
-padding-top:120px; /* FIX */
+margin-top:70px;
+padding-top:120px; /* ✅ FIX */
 position:relative;
 }
 
@@ -51,9 +53,16 @@ background:linear-gradient(90deg, rgba(2,6,23,0.85) 0%, rgba(2,6,23,0.6) 40%, tr
 
 .hero-content{position:relative;max-width:700px}
 
-/* TEXT */
+/* ANIMATION */
+.fade-up{opacity:0;transform:translateY(30px);animation:fadeUp 1s ease forwards}
+.fade-up-delay{opacity:0;transform:translateY(30px);animation:fadeUp 1s ease forwards;animation-delay:0.4s}
+.fade-up-delay2{opacity:0;transform:translateY(30px);animation:fadeUp 1s ease forwards;animation-delay:0.8s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* HERO TEXT */
 .hero-title{
 font-size:70px;line-height:1.1;font-weight:700;margin-bottom:15px;
+text-shadow:0 5px 20px rgba(0,0,0,0.8);
 }
 
 .hero-title span{
@@ -68,9 +77,13 @@ background:linear-gradient(90deg,#60a5fa,#2563eb);
 .cta{
 display:inline-block;margin-top:20px;
 padding:14px 26px;
-background:#2563eb;
+background:linear-gradient(90deg,#2563eb,#1d4ed8);
 border-radius:12px;color:#fff;text-decoration:none;
+font-weight:600;
+box-shadow:0 0 20px rgba(37,99,235,0.6);
+transition:0.3s;
 }
+.cta:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(37,99,235,1)}
 
 /* SECTIONS */
 section{padding:90px 8%}
@@ -89,12 +102,39 @@ padding:25px;
 border-radius:18px;
 border:1px solid rgba(255,255,255,0.05);
 transition:0.3s;
+position:relative;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.show{opacity:1;transform:translateY(0)}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.5)
 }
 
 .icon{
 font-size:28px;
 margin-bottom:10px;
 color:#2563eb
+}
+
+/* FEATURED */
+.featured{
+transform:scale(1.05);
+border:1px solid rgba(37,99,235,0.4);
+box-shadow:0 0 30px rgba(37,99,235,0.2);
+}
+
+.badge{
+position:absolute;
+top:-10px;
+right:-10px;
+background:#2563eb;
+padding:5px 12px;
+border-radius:20px;
+font-size:12px;
 }
 
 /* GALLERY */
@@ -109,6 +149,14 @@ width:100%;
 height:200px;
 object-fit:cover;
 border-radius:14px;
+opacity:0;
+transform:scale(0.9);
+transition:0.4s;
+}
+
+.gallery img.show{
+opacity:1;
+transform:scale(1);
 }
 
 /* CONTACT */
@@ -126,6 +174,22 @@ border-radius:18px;
 background:#010a1f;
 margin-top:80px;
 padding:40px 0 20px;
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.socials{text-align:center;margin-bottom:20px}
+
+.socials img{
+width:32px;
+margin:0 12px;
+opacity:0.8;
+transition:0.3s;
+}
+
+.socials img:hover{
+opacity:1;
+transform:scale(1.15);
+filter:drop-shadow(0 0 8px rgba(37,99,235,0.7));
 }
 
 footer{
@@ -134,7 +198,7 @@ color:#94a3b8;
 font-size:14px;
 }
 
-/* ✅ MOBILE FIX */
+/* ✅ MOBILE FIX (SAFE) */
 @media(max-width:768px){
 
 header{
@@ -175,12 +239,10 @@ font-size:40px;
 
 <header>
 <div class="logo"><img src="logo.png"></div>
-
 <div class="top-info">
 <span>📧 contact@jlmvaleting.co.uk</span>
 <span>📍 Exeter, Devon</span>
 </div>
-
 <nav>
 <a href="#services">Services</a>
 <a href="#gallery">Gallery</a>
@@ -192,16 +254,16 @@ font-size:40px;
 <section class="hero">
 <div class="hero-content">
 
-<h1 class="hero-title">
+<h1 class="hero-title fade-up">
 Showroom Finish.<br>
 <span>Every Single Time.</span>
 </h1>
 
-<p class="hero-sub">
+<p class="hero-sub fade-up-delay">
 Premium mobile valeting in Exeter & surrounding areas.
 </p>
 
-<a href="quote.html" class="cta">Get a Quote Now</a>
+<a href="quote.html" class="cta fade-up-delay2 page-link">Get a Quote Now</a>
 
 </div>
 </section>
@@ -214,19 +276,20 @@ Premium mobile valeting in Exeter & surrounding areas.
 <div class="card">
 <div class="icon">🧼</div>
 <h3>Interior Valet</h3>
-<p>A thorough deep clean of all interior surfaces including seats, carpets, plastics, and trims.</p>
+<p>A thorough deep clean of all interior surfaces including seats, carpets, plastics, and trims — leaving your vehicle fresh, sanitised, and restored.</p>
 </div>
 
 <div class="card">
 <div class="icon">🚿</div>
 <h3>Exterior Valet</h3>
-<p>Safe hand wash using professional techniques to thoroughly clean your vehicle.</p>
+<p>Safe hand wash using professional techniques to thoroughly clean your vehicle and restore a fresh, high-quality finish.</p>
 </div>
 
-<div class="card">
+<div class="card featured">
+<div class="badge">Most Popular</div>
 <div class="icon">🚗</div>
 <h3>Full Valet</h3>
-<p>A complete inside and out transformation for a true showroom result.</p>
+<p>A complete inside and out transformation, combining deep interior cleaning with a detailed exterior finish for a true showroom result.</p>
 </div>
 
 </div>
@@ -243,21 +306,79 @@ Premium mobile valeting in Exeter & surrounding areas.
 </div>
 </section>
 
+<!-- WHY -->
+<section id="why">
+<h2>Why Choose JLM</h2>
+<div class="services">
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Precision & Passion</h3>
+<p>Every vehicle is treated with precision and care, ensuring no detail is overlooked from start to finish.</p>
+</div>
+
+<div class="card">
+<div class="icon">✨</div>
+<h3>Showroom Quality</h3>
+<p>We deliver that deep-clean, glossy finish that brings your vehicle back to showroom condition.</p>
+</div>
+
+<div class="card">
+<div class="icon">🧴</div>
+<h3>Premium Products</h3>
+<p>We use high-end, professional-grade products that enhance, protect, and extend your vehicle’s finish.</p>
+</div>
+
+<div class="card">
+<div class="icon">🤝</div>
+<h3>Personal Service</h3>
+<p>As a sole operator, I provide a personalised service with full attention and care given to every vehicle.</p>
+</div>
+
+</div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
 <div class="contact-box">
 <h2>Get a Quote</h2>
 <p>Click below to open full quote form</p>
-<a href="quote.html" class="cta">Open Quote Form</a>
+<a href="quote.html" class="cta page-link">Open Quote Form</a>
 </div>
 </section>
 
 <!-- FOOTER -->
 <div class="footer-section">
+
+<div class="socials">
+<a href="https://www.instagram.com/jlm.valeting"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+<a href="https://www.tiktok.com/@jlm.valeting"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
+<a href="https://www.facebook.com/profile.php?id=61574434355091"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+</div>
+
 <footer>
 <p>© 2026 JLM Valeting. All rights reserved.</p>
 </footer>
+
 </div>
+
+<script>
+const elements=document.querySelectorAll('.card,.gallery img');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('show')}
+});
+});
+elements.forEach(el=>observer.observe(el));
+
+document.querySelectorAll(".page-link").forEach(link=>{
+link.addEventListener("click",function(e){
+e.preventDefault();
+document.body.style.opacity="0";
+setTimeout(()=>{window.location=this.href},400);
+});
+});
+</script>
 
 </body>
 </html>
