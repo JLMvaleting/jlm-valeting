@@ -37,6 +37,48 @@ button.loading .spinner{display:inline-block}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 @media(max-width:768px){.container{grid-template-columns:1fr}}
+
+/* ✅ WhatsApp button styling */
+.whatsapp-btn{
+  display:inline-block;
+  background:#25D366;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+  transition:0.3s;
+}
+.whatsapp-btn:hover{
+  background:#1ebe5d;
+  transform:translateY(-2px);
+  box-shadow:0 0 15px rgba(37,211,102,0.6);
+}
+
+/* ✅ Floating WhatsApp button */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  font-size:24px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  box-shadow:0 5px 15px rgba(0,0,0,0.4);
+  z-index:1000;
+  transition:0.3s;
+}
+.whatsapp-float:hover{
+  background:#1ebe5d;
+  transform:scale(1.1);
+}
 </style>
 </head>
 
@@ -50,7 +92,14 @@ button.loading .spinner{display:inline-block}
 
 <div class="box"><h3>Email</h3><p>contact@jlmvaleting.co.uk</p></div>
 <div class="box"><h3>Phone</h3><p>07404 930763</p></div>
-<div class="box"><h3>WhatsApp</h3><p><a href="https://wa.me/447404930763" target="_blank">💬 Chat on WhatsApp</a></p></div>
+
+<!-- ✅ UPDATED WhatsApp button -->
+<div class="box">
+<h3>WhatsApp</h3>
+<a href="https://wa.me/447404930763?text=Hi%20I'm%20looking%20for%20a%20quote" target="_blank" class="whatsapp-btn">
+💬 Chat on WhatsApp
+</a>
+</div>
 
 </div>
 
@@ -92,6 +141,13 @@ button.loading .spinner{display:inline-block}
 </div>
 
 </div>
+
+<!-- ✅ Floating WhatsApp button -->
+<a href="https://wa.me/447404930763?text=Hi%20I'm%20looking%20for%20a%20quote" 
+   class="whatsapp-float" 
+   target="_blank">
+   💬
+</a>
 
 <script>
 const form = document.getElementById("quote-form");
