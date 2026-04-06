@@ -9,6 +9,12 @@
 <style>
 :root{--blue:#2563eb;--dark:#020617}
 *{box-sizing:border-box}
+
+/* ✅ SMOOTH SCROLL ADDED */
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:'Inter',sans-serif;
@@ -363,7 +369,6 @@ if(entry.isIntersecting){entry.target.classList.add('show')}
 });
 elements.forEach(el=>observer.observe(el));
 
-/* ✅ FIX ADDED (this is the key part) */
 window.addEventListener("pageshow", function(){
   document.body.style.opacity = "1";
 });
