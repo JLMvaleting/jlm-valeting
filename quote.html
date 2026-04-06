@@ -188,6 +188,11 @@ const btn = document.querySelector("button");
 const successMsg = document.querySelector(".success");
 const errorMsg = document.querySelector(".error");
 
+/* ✅ FIX: ensures page shows properly when navigating back */
+window.addEventListener("pageshow", function(){
+  document.body.style.opacity = "1";
+});
+
 form.addEventListener("submit", async function(e) {
   e.preventDefault();
 
