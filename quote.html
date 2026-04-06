@@ -42,7 +42,24 @@ body{margin:0;font-family:'Inter',sans-serif;background:#020617;color:#fff;displ
 
 .right{padding:50px;background:#0b1220}
 
-input, textarea{width:100%;padding:14px;margin-bottom:15px;border:none;border-radius:10px;background:#020617;color:#fff;outline:none}
+/* ✅ UPDATED textarea */
+input, textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:10px;
+  background:#020617;
+  color:#fff;
+  outline:none;
+}
+
+textarea{
+  resize:none;              /* ❌ removes slider */
+  min-height:120px;         /* starting height */
+  overflow:hidden;          /* prevents scrollbars */
+}
+
 input:focus, textarea:focus{border:1px solid #2563eb}
 
 button{width:100%;padding:15px;background:#2563eb;border:none;color:#fff;border-radius:12px;font-weight:600;cursor:pointer;transition:0.3s;display:flex;justify-content:center;align-items:center;gap:10px}
@@ -193,6 +210,13 @@ window.addEventListener("pageshow", function(){
   document.body.style.opacity = "1";
 });
 
+/* ✅ Auto-expand textarea */
+const textarea = document.querySelector("textarea");
+textarea.addEventListener("input", function(){
+  this.style.height = "auto";
+  this.style.height = this.scrollHeight + "px";
+});
+
 form.addEventListener("submit", async function(e) {
   e.preventDefault();
 
@@ -213,6 +237,7 @@ form.addEventListener("submit", async function(e) {
     successMsg.classList.add("show");
     errorMsg.textContent = "";
     form.reset();
+    textarea.style.height = "120px"; /* reset height */
   } else {
     errorMsg.textContent = "Something went wrong. Please try again.";
   }
