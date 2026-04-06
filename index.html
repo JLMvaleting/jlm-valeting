@@ -14,7 +14,6 @@ body{
   font-family:'Inter',sans-serif;
   background:var(--dark);
   color:#fff;
-  transition:0.4s;
 }
 
 /* HEADER */
@@ -26,8 +25,7 @@ backdrop-filter:blur(12px);z-index:1000;
 border-bottom:1px solid rgba(255,255,255,0.05)
 }
 
-.logo img{height:75px;transition:0.3s}
-.logo img:hover{transform:scale(1.05);filter:drop-shadow(0 0 8px rgba(37,99,235,0.5))}
+.logo img{height:75px}
 
 nav a{color:#cbd5f5;margin-left:25px;text-decoration:none}
 
@@ -38,10 +36,11 @@ display:flex;gap:20px;font-size:13px;color:#cbd5f5
 
 /* HERO */
 .hero{
-height:100vh;
+min-height:100vh;
 background:url("hero.jpg") center/cover no-repeat;
 display:flex;align-items:center;padding:0 8%;
-margin-top:70px;position:relative;
+padding-top:120px; /* FIX */
+position:relative;
 }
 
 .hero::before{
@@ -51,16 +50,9 @@ background:linear-gradient(90deg, rgba(2,6,23,0.85) 0%, rgba(2,6,23,0.6) 40%, tr
 
 .hero-content{position:relative;max-width:700px}
 
-/* ANIMATION */
-.fade-up{opacity:0;transform:translateY(30px);animation:fadeUp 1s ease forwards}
-.fade-up-delay{opacity:0;transform:translateY(30px);animation:fadeUp 1s ease forwards;animation-delay:0.4s}
-.fade-up-delay2{opacity:0;transform:translateY(30px);animation:fadeUp 1s ease forwards;animation-delay:0.8s}
-@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-
-/* HERO TEXT */
+/* TEXT */
 .hero-title{
-font-size:70px;line-height:1.1;font-weight:700;margin-bottom:15px;
-text-shadow:0 5px 20px rgba(0,0,0,0.8);
+font-size:60px;line-height:1.1;font-weight:700;margin-bottom:15px;
 }
 
 .hero-title span{
@@ -73,162 +65,82 @@ background:linear-gradient(90deg,#60a5fa,#2563eb);
 
 /* CTA */
 .cta{
-display:inline-block;margin-top:20px;
+display:inline-block;
 padding:14px 26px;
-background:linear-gradient(90deg,#2563eb,#1d4ed8);
-border-radius:12px;color:#fff;text-decoration:none;
-font-weight:600;
-box-shadow:0 0 20px rgba(37,99,235,0.6);
-transition:0.3s;
-}
-.cta:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(37,99,235,1)}
-
-/* SECTIONS */
-section{padding:90px 8%}
-h2{font-size:32px;margin-bottom:25px}
-
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px
-}
-
-.card{
-background:linear-gradient(145deg,#020617,#0f172a);
-padding:25px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.3s;
-position:relative;
-opacity:0;
-transform:translateY(40px);
-}
-
-.card.show{opacity:1;transform:translateY(0)}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 30px rgba(0,0,0,0.5)
-}
-
-.icon{
-font-size:28px;
-margin-bottom:10px;
-color:#2563eb
-}
-
-/* FEATURED */
-.featured{
-transform:scale(1.05);
-border:1px solid rgba(37,99,235,0.4);
-box-shadow:0 0 30px rgba(37,99,235,0.2);
-}
-
-.badge{
-position:absolute;
-top:-10px;
-right:-10px;
 background:#2563eb;
-padding:5px 12px;
-border-radius:20px;
-font-size:12px;
+border-radius:12px;color:#fff;text-decoration:none;
 }
 
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px
-}
-
-.gallery img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:14px;
-opacity:0;
-transform:scale(0.9);
-transition:0.4s;
-}
-
-.gallery img.show{
-opacity:1;
-transform:scale(1);
-}
-
-/* CONTACT */
-.contact-box{
-max-width:500px;
-margin:0 auto;
-text-align:center;
-padding:35px;
-background:#0f172a;
-border-radius:18px;
-}
-
-/* FOOTER */
-.footer-section{
-background:#010a1f;
-margin-top:80px;
-padding:40px 0 20px;
-border-top:1px solid rgba(255,255,255,0.05);
-}
-
-.socials{text-align:center;margin-bottom:20px}
-
-.socials img{
-width:32px;
-margin:0 12px;
-opacity:0.8;
-transition:0.3s;
-}
-
-.socials img:hover{
-opacity:1;
-transform:scale(1.15);
-filter:drop-shadow(0 0 8px rgba(37,99,235,0.7));
-}
-
-footer{
-text-align:center;
-color:#94a3b8;
-font-size:14px;
-}
-
-/* ✅ FIXED MOBILE HEADER (SAFE VERSION) */
+/* MOBILE FIX */
 @media(max-width:768px){
 
-  header{
-    padding:10px 15px;
-  }
+header{
+flex-direction:column;
+padding:10px;
+}
 
-  .logo img{
-    height:55px;
-  }
+.logo img{
+height:55px;
+}
 
-  .top-info{
-    position:static;
-    transform:none;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    font-size:12px;
-    margin-top:5px;
-  }
+.top-info{
+position:static;
+transform:none;
+flex-direction:column;
+align-items:center;
+gap:5px;
+margin-top:5px;
+}
 
-  nav{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    margin-top:8px;
-  }
+nav{
+margin-top:8px;
+}
 
-  nav a{
-    margin:0 10px;
-    font-size:14px;
-  }
+.hero{
+padding-top:180px; /* FIXES BLANK SCREEN */
+}
+
+.hero-title{
+font-size:40px;
+}
 
 }
 </style>
 </head>
+
+<body>
+
+<header>
+<div class="logo"><img src="logo.png"></div>
+
+<div class="top-info">
+<span>📧 contact@jlmvaleting.co.uk</span>
+<span>📍 Exeter, Devon</span>
+</div>
+
+<nav>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Quote</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+
+<h1 class="hero-title">
+Showroom Finish.<br>
+<span>Every Single Time.</span>
+</h1>
+
+<p class="hero-sub">
+Premium mobile valeting in Exeter & surrounding areas.
+</p>
+
+<a href="quote.html" class="cta">Get a Quote Now</a>
+
+</div>
+</section>
+
+</body>
+</html>
