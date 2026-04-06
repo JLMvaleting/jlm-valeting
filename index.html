@@ -40,7 +40,7 @@ display:flex;gap:20px;font-size:13px;color:#cbd5f5
 .hero{
 height:100vh;
 background:url("hero.jpg") center/cover no-repeat;
-background-position: 20% center; /* desktop */
+background-position: 20% center;
 display:flex;align-items:center;padding:0 8%;
 margin-top:70px;
 padding-top:120px;
@@ -199,17 +199,11 @@ color:#94a3b8;
 font-size:14px;
 }
 
-/* ✅ MOBILE FIX */
+/* MOBILE */
 @media(max-width:768px){
 
-header{
-flex-direction:column;
-padding:10px;
-}
-
-.logo img{
-height:55px;
-}
+header{flex-direction:column;padding:10px;}
+.logo img{height:55px;}
 
 .top-info{
 position:static;
@@ -220,18 +214,14 @@ gap:5px;
 margin-top:5px;
 }
 
-nav{
-margin-top:8px;
-}
+nav{margin-top:8px;}
 
 .hero{
 padding-top:180px;
-background-position: 10% center; /* ✅ mobile tweak for better framing */
+background-position: 10% center;
 }
 
-.hero-title{
-font-size:40px;
-}
+.hero-title{font-size:40px;}
 
 }
 </style>
@@ -372,6 +362,11 @@ if(entry.isIntersecting){entry.target.classList.add('show')}
 });
 });
 elements.forEach(el=>observer.observe(el));
+
+/* ✅ FIX ADDED (this is the key part) */
+window.addEventListener("pageshow", function(){
+  document.body.style.opacity = "1";
+});
 
 document.querySelectorAll(".page-link").forEach(link=>{
 link.addEventListener("click",function(e){
