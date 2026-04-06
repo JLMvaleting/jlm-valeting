@@ -373,22 +373,42 @@ window.addEventListener("pageshow", function(){
   document.body.style.opacity = "1";
 });
 
-/* ✅ REAL FIX */
+/* 💎 FINAL WORKING SMOOTH SCROLL */
 document.querySelectorAll('nav a').forEach(link=>{
-link.addEventListener("click",function(e){
-const id=this.getAttribute("href");
+link.addEventListener("click", function(e){
+const id = this.getAttribute("href");
+
 if(id.startsWith("#")){
 e.preventDefault();
-const target=document.querySelector(id);
-if(!target)return;
 
-const offset=80;
-const targetY=target.getBoundingClientRect().top+window.pageYOffset-offset;
+const target = document.querySelector(id);
+if(!target) return;
 
-window.scrollTo({
-top:targetY,
-behavior:"smooth"
-});
+const offset = 80;
+const targetY = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+let start = window.pageYOffset;
+let distance = targetY - start;
+let startTime = null;
+
+function animation(currentTime){
+if(!startTime) startTime = currentTime;
+
+let time = currentTime - startTime;
+let progress = Math.min(time / 600, 1);
+
+let ease = progress < 0.5
+? 2 * progress * progress
+: 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+window.scrollTo(0, start + distance * ease);
+
+if(progress < 1){
+requestAnimationFrame(animation);
+}
+}
+
+requestAnimationFrame(animation);
 }
 });
 });
