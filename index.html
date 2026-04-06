@@ -196,41 +196,37 @@ color:#94a3b8;
 font-size:14px;
 }
 
-/* ✅ MOBILE HEADER FIX ADDED */
+/* ✅ FIXED MOBILE HEADER (SAFE VERSION) */
 @media(max-width:768px){
 
   header{
-    flex-direction:column;
-    align-items:center;
     padding:10px 15px;
   }
 
   .logo img{
     height:55px;
-    margin-bottom:5px;
   }
 
   .top-info{
     position:static;
     transform:none;
-    flex-direction:column;
-    align-items:center;
-    gap:5px;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
     font-size:12px;
-    margin-bottom:5px;
+    margin-top:5px;
   }
 
   nav{
-    margin-top:5px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:8px;
   }
 
   nav a{
     margin:0 10px;
     font-size:14px;
-  }
-
-  .hero{
-    margin-top:120px;
   }
 
 }
