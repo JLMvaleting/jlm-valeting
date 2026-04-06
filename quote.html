@@ -11,10 +11,33 @@ body{margin:0;font-family:'Inter',sans-serif;background:#020617;color:#fff;displ
 .container{width:90%;max-width:1000px;display:grid;grid-template-columns:1fr 1fr;background:linear-gradient(145deg,#020617,#0f172a);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
 
 .left{padding:50px}
-.left h1{font-size:40px;margin-bottom:10px}
+
+/* ✅ 3: Improved heading */
+.left h1{
+  font-size:42px;
+  font-weight:700;
+  letter-spacing:-0.5px;
+  margin-bottom:10px
+}
+
 .left p{color:#cbd5f5}
 
-.box{background:#020617;padding:18px;border-radius:12px;margin-top:20px;border:1px solid rgba(255,255,255,0.05)}
+/* ✅ 4 + 7: Glass effect + hover animation */
+.box{
+  background:rgba(2,6,23,0.7);
+  backdrop-filter:blur(10px);
+  padding:18px;
+  border-radius:12px;
+  margin-top:20px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+
+.box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
 .box h3{margin:0;color:#2563eb;font-size:16px}
 
 .right{padding:50px;background:#0b1220}
@@ -74,7 +97,7 @@ button.loading .spinner{display:inline-block}
   box-shadow:0 0 15px rgba(37,99,235,0.6);
 }
 
-/* Desktop phone number (added) */
+/* Desktop phone number */
 .phone-text{
   margin-top:10px;
   color:#cbd5f5;
@@ -105,10 +128,8 @@ button.loading .spinner{display:inline-block}
 <div class="box">
 <h3>Phone</h3>
 
-<!-- ✅ Desktop number -->
 <p class="phone-text">07404 930763</p>
 
-<!-- ✅ Mobile button -->
 <a href="tel:+447404930763" class="call-btn">📞 Tap to Call</a>
 
 </div>
