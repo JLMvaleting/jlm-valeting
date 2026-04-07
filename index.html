@@ -10,11 +10,6 @@
 :root{--blue:#2563eb;--dark:#020617}
 *{box-sizing:border-box}
 
-/* ❌ REMOVED THIS (was causing snapping) */
-/* html{
-  scroll-behavior:smooth;
-} */
-
 body{
   margin:0;
   font-family:'Inter',sans-serif;
@@ -142,6 +137,45 @@ background:#2563eb;
 padding:5px 12px;
 border-radius:20px;
 font-size:12px;
+}
+
+/* NEW PRICE STYLING */
+.price{
+margin-top:12px;
+font-size:20px;
+font-weight:700;
+color:#60a5fa;
+letter-spacing:0.5px;
+opacity:0;
+transform:translateY(10px);
+transition:0.4s;
+}
+
+.card.show .price{
+opacity:1;
+transform:translateY(0);
+}
+
+.price span{
+font-size:13px;
+font-weight:400;
+color:#94a3b8;
+margin-left:6px;
+}
+
+/* PRICE BADGE */
+.price-badge{
+position:absolute;
+top:15px;
+left:15px;
+background:rgba(37,99,235,0.15);
+border:1px solid rgba(96,165,250,0.4);
+padding:4px 10px;
+border-radius:12px;
+font-size:12px;
+color:#60a5fa;
+font-weight:600;
+backdrop-filter:blur(6px);
 }
 
 /* GALLERY */
@@ -272,22 +306,28 @@ Premium mobile valeting in Exeter & surrounding areas.
 <div class="services">
 
 <div class="card">
+<div class="price-badge">FROM £50</div>
 <div class="icon">🧼</div>
 <h3>Interior Valet</h3>
 <p>A thorough deep clean of all interior surfaces including seats, carpets, plastics, and trims — leaving your vehicle fresh, sanitised, and restored.</p>
+<div class="price">£50 <span>starting from</span></div>
 </div>
 
 <div class="card">
+<div class="price-badge">FROM £50</div>
 <div class="icon">🚿</div>
 <h3>Exterior Valet</h3>
 <p>Safe hand wash using professional techniques to thoroughly clean your vehicle and restore a fresh, high-quality finish.</p>
+<div class="price">£50 <span>starting from</span></div>
 </div>
 
 <div class="card featured">
+<div class="price-badge">FROM £90</div>
 <div class="badge">Most Popular</div>
 <div class="icon">🚗</div>
 <h3>Full Valet</h3>
 <p>A complete inside and out transformation, combining deep interior cleaning with a detailed exterior finish for a true showroom result.</p>
+<div class="price">£90 <span>starting from</span></div>
 </div>
 
 </div>
@@ -373,7 +413,6 @@ window.addEventListener("pageshow", function(){
   document.body.style.opacity = "1";
 });
 
-/* 💎 FINAL WORKING SMOOTH SCROLL */
 document.querySelectorAll('nav a').forEach(link=>{
 link.addEventListener("click", function(e){
 const id = this.getAttribute("href");
