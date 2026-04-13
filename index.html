@@ -34,6 +34,10 @@
   --panel-soft:#111c33;
   --text-soft:#cbd5e1;
   --line:rgba(255,255,255,0.08);
+  --gold:#facc15;
+  --gold-soft:#fde68a;
+  --success:#22c55e;
+  --error:#f87171;
 }
 
 *{box-sizing:border-box}
@@ -403,6 +407,242 @@ h2{
   backdrop-filter:blur(10px);
 }
 
+/* COVERAGE */
+.coverage-section{
+  position:relative;
+}
+
+.coverage-shell{
+  max-width:1180px;
+  margin:0 auto;
+  background:
+    linear-gradient(180deg, rgba(8,14,28,0.94), rgba(8,13,26,0.84)),
+    radial-gradient(circle at top, rgba(96,165,250,0.12), transparent 42%);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:30px;
+  padding:36px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.26);
+}
+
+.coverage-header{
+  max-width:860px;
+  margin:0 auto 28px;
+  text-align:center;
+}
+
+.coverage-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(37,99,235,0.14);
+  border:1px solid rgba(96,165,250,0.28);
+  color:#bfdbfe;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+
+.coverage-header h2{
+  margin:0 0 14px;
+  font-size:42px;
+  line-height:1.05;
+}
+
+.coverage-header p{
+  margin:0 auto;
+  max-width:760px;
+  color:#dbeafe;
+  font-size:18px;
+  line-height:1.75;
+}
+
+.coverage-header strong{
+  color:#fff;
+}
+
+.postcode-panel{
+  max-width:760px;
+  margin:30px auto 18px;
+  text-align:center;
+}
+
+.postcode-form{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  background:rgba(2,6,23,0.82);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:999px;
+  box-shadow:0 16px 40px rgba(0,0,0,0.28);
+}
+
+.postcode-form input{
+  flex:1;
+  min-width:0;
+  background:transparent;
+  border:none;
+  outline:none;
+  color:#fff;
+  font-family:'Manrope',sans-serif;
+  font-size:18px;
+  padding:0 18px;
+}
+
+.postcode-form input::placeholder{
+  color:#94a3b8;
+}
+
+.postcode-button{
+  width:66px;
+  height:66px;
+  border:none;
+  border-radius:50%;
+  background:linear-gradient(135deg, #fde68a, #facc15);
+  color:#111827;
+  font-size:28px;
+  cursor:pointer;
+  flex-shrink:0;
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow:0 10px 30px rgba(250,204,21,0.32);
+}
+
+.postcode-button:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 16px 34px rgba(250,204,21,0.42);
+}
+
+.postcode-note{
+  margin:14px 0 0;
+  color:#cbd5e1;
+  font-size:16px;
+}
+
+.postcode-status{
+  min-height:26px;
+  margin:14px 0 0;
+  font-size:14px;
+  font-weight:700;
+  padding:0 10px;
+}
+
+.postcode-status.success{
+  color:var(--success);
+}
+
+.postcode-status.error{
+  color:var(--error);
+}
+
+.coverage-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1.5fr) minmax(280px, 0.9fr);
+  gap:24px;
+  margin-top:30px;
+  align-items:start;
+}
+
+.map-card,
+.area-card{
+  background:linear-gradient(180deg, rgba(13,20,38,0.96), rgba(7,12,24,0.98));
+  border:1px solid var(--line);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.24);
+}
+
+.map-topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:18px 20px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.map-copy h3,
+.area-card h3{
+  margin:0 0 6px;
+  font-size:22px;
+}
+
+.map-copy p{
+  margin:0;
+  color:#cbd5e1;
+  font-size:14px;
+}
+
+.map-open{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 16px;
+  border-radius:14px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  text-decoration:none;
+  font-weight:800;
+  white-space:nowrap;
+  transition:transform 0.25s ease;
+}
+
+.map-open:hover{
+  transform:translateY(-2px);
+}
+
+.map-embed{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 11;
+  background:#0b1220;
+}
+
+.map-embed iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+.area-card{
+  padding:24px;
+}
+
+.area-card p{
+  margin:0 0 18px;
+  color:#cbd5e1;
+  line-height:1.7;
+}
+
+.area-list{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px;
+}
+
+.area-pill{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 14px;
+  border-radius:16px;
+  background:rgba(37,99,235,0.10);
+  border:1px solid rgba(96,165,250,0.20);
+  color:#dbeafe;
+  font-weight:700;
+}
+
+.area-pill::before{
+  content:'•';
+  color:var(--gold);
+  font-size:22px;
+  line-height:1;
+}
+
 /* CONTACT */
 .contact-box{
   max-width:500px;
@@ -543,6 +783,18 @@ body.modal-open{
   .image-tile{
     height:220px;
   }
+
+  .coverage-shell{
+    padding:24px;
+  }
+
+  .coverage-grid{
+    grid-template-columns:1fr;
+  }
+
+  .area-list{
+    grid-template-columns:1fr 1fr;
+  }
 }
 
 @media(max-width:768px){
@@ -632,6 +884,50 @@ body.modal-open{
     font-size:10px;
   }
 
+  .coverage-shell{
+    padding:18px;
+    border-radius:24px;
+  }
+
+  .coverage-header h2{
+    font-size:32px;
+  }
+
+  .coverage-header p{
+    font-size:16px;
+    line-height:1.65;
+  }
+
+  .postcode-form{
+    padding:10px;
+    gap:8px;
+  }
+
+  .postcode-form input{
+    font-size:16px;
+    padding:0 12px;
+  }
+
+  .postcode-button{
+    width:58px;
+    height:58px;
+    font-size:24px;
+  }
+
+  .map-topbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .map-open{
+    width:100%;
+    justify-content:center;
+  }
+
+  .area-list{
+    grid-template-columns:1fr;
+  }
+
   .lightbox{
     padding:14px;
   }
@@ -663,6 +959,7 @@ body.modal-open{
 <nav>
 <a href="#services">Services</a>
 <a href="#gallery">Gallery</a>
+<a href="#coverage">Coverage</a>
 <a href="#contact">Quote</a>
 </nav>
 </header>
@@ -800,6 +1097,85 @@ Premium mobile valeting in Exeter & surrounding areas.
 <div class="icon">🤝</div>
 <h3>Personal Service</h3>
 <p>As a sole operator, I provide a personalised service with full attention and care given to every vehicle.</p>
+</div>
+
+</div>
+</section>
+
+<section id="coverage" class="coverage-section">
+<div class="coverage-shell">
+
+<div class="coverage-header">
+<div class="coverage-kicker">Devon Coverage</div>
+<h2>Enter Your Postcode And Check Our Devon Coverage</h2>
+<p>
+Our mobile valeting service covers <strong>Exeter</strong>, surrounding towns, and wider parts of <strong>Devon</strong>. Whether you're relaxing at home or need your vehicle cleaned on your driveway, we bring the valet to you. Enter your postcode below to check if you're in our current service area.
+</p>
+</div>
+
+<div class="postcode-panel">
+<form class="postcode-form" id="postcodeForm">
+<input
+  type="text"
+  id="postcodeInput"
+  name="postcode"
+  placeholder="Enter your postcode"
+  inputmode="text"
+  autocomplete="postal-code"
+  aria-label="Enter your postcode"
+/>
+<button class="postcode-button" type="submit" aria-label="Search postcode">⌕</button>
+</form>
+<p class="postcode-note">Quickly check whether your postcode is covered.</p>
+<p class="postcode-status" id="postcodeStatus" aria-live="polite"></p>
+</div>
+
+<div class="coverage-grid">
+<div class="map-card">
+<div class="map-topbar">
+<div class="map-copy">
+<h3>Open In Maps</h3>
+<p>View our Devon coverage area and launch Google Maps in one tap.</p>
+</div>
+<a
+  class="map-open"
+  href="https://www.google.com/maps/place/Devon/@50.7904,-3.8887,8z"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Open in Maps ↗
+</a>
+</div>
+
+<div class="map-embed">
+<iframe
+  title="JLM Valeting coverage area in Devon"
+  src="https://www.google.com/maps?q=Devon%2C%20England&z=8&output=embed"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  allowfullscreen>
+</iframe>
+</div>
+</div>
+
+<div class="area-card">
+<h3>Devon Postcodes Covered</h3>
+<p>Current postcode coverage includes these Devon outward codes:</p>
+<div class="area-list">
+<div class="area-pill">EX1-EX24</div>
+<div class="area-pill">EX31-EX39</div>
+<div class="area-pill">PL1</div>
+<div class="area-pill">PL3-PL9</div>
+<div class="area-pill">PL15</div>
+<div class="area-pill">PL16</div>
+<div class="area-pill">PL19</div>
+<div class="area-pill">PL20</div>
+<div class="area-pill">PL21</div>
+<div class="area-pill">TQ1-TQ14</div>
+<div class="area-pill">TA21</div>
+<div class="area-pill">Devon Areas Only</div>
+</div>
+</div>
 </div>
 
 </div>
@@ -943,6 +1319,69 @@ lightbox.addEventListener("click", e=>{
 document.addEventListener("keydown", e=>{
   if(e.key==="Escape" && lightbox.classList.contains("open")){
     closeLightbox();
+  }
+});
+
+const postcodeForm=document.getElementById("postcodeForm");
+const postcodeInput=document.getElementById("postcodeInput");
+const postcodeStatus=document.getElementById("postcodeStatus");
+
+const devonPostcodes=new Set([
+  "EX1","EX2","EX3","EX4","EX5","EX6","EX7","EX8","EX9",
+  "EX10","EX11","EX12","EX13","EX14","EX15","EX16","EX17","EX18","EX19",
+  "EX20","EX21","EX22","EX23","EX24",
+  "EX31","EX32","EX33","EX34","EX35","EX36","EX37","EX38","EX39",
+  "PL1","PL3","PL4","PL5","PL6","PL7","PL8","PL9",
+  "PL15","PL16","PL19","PL20","PL21",
+  "TQ1","TQ2","TQ3","TQ4","TQ5","TQ6","TQ7","TQ8","TQ9",
+  "TQ10","TQ11","TQ12","TQ13","TQ14",
+  "TA21"
+]);
+
+function setPostcodeStatus(message, type){
+  postcodeStatus.textContent=message;
+  postcodeStatus.className="postcode-status";
+
+  if(type){
+    postcodeStatus.classList.add(type);
+  }
+}
+
+function getOutwardCode(postcode){
+  const cleaned=postcode.trim().toUpperCase().replace(/\s+/g,"");
+  const match=cleaned.match(/^([A-Z]{1,2}\d{1,2}[A-Z]?)/);
+  return match ? match[1] : "";
+}
+
+postcodeForm.addEventListener("submit", e=>{
+  e.preventDefault();
+
+  const postcode=postcodeInput.value.trim();
+
+  if(!postcode){
+    setPostcodeStatus("Please enter a postcode first.", "error");
+    postcodeInput.focus();
+    return;
+  }
+
+  const outwardCode=getOutwardCode(postcode);
+
+  if(!outwardCode){
+    setPostcodeStatus("That postcode format doesn’t look right. Please check and try again.", "error");
+    return;
+  }
+
+  if(devonPostcodes.has(outwardCode)){
+    setPostcodeStatus(`Good news, ${outwardCode} is inside our current Devon coverage area. Opening Google Maps now...`, "success");
+
+    const query=encodeURIComponent(postcode + ", Devon");
+    const mapsUrl=`https://www.google.com/maps/search/?api=1&query=${query}`;
+
+    setTimeout(()=>{
+      window.open(mapsUrl, "_blank", "noopener");
+    },250);
+  }else{
+    setPostcodeStatus(`Sorry, ${outwardCode} isn’t currently listed in our Devon service area. Please contact us if you'd like us to confirm manually.`, "error");
   }
 });
 </script>
