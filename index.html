@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JLM Valeting | Car Detailing Devon | Mobile Valeting Services</title>
-<meta name="description" content="Premium mobile car detailing in Exeter. JLM Valeting offers interior valeting, exterior detailing, and full car cleaning services across Exeter and surrounding areas.">
+<meta name="description" content="Premium mobile car detailing in Exeter. JLM Valeting offers interior valeting, exterior detailing, and full car cleaning services across Exeter, Devon, Taunton, and surrounding areas.">
 
 <meta name="application-name" content="JLM Valeting">
 <meta name="apple-mobile-web-app-title" content="JLM Valeting">
@@ -539,15 +539,10 @@ h2{
 }
 
 .coverage-grid{
-  display:grid;
-  grid-template-columns:minmax(0, 1.5fr) minmax(280px, 0.9fr);
-  gap:24px;
   margin-top:30px;
-  align-items:start;
 }
 
-.map-card,
-.area-card{
+.map-card{
   background:linear-gradient(180deg, rgba(13,20,38,0.96), rgba(7,12,24,0.98));
   border:1px solid var(--line);
   border-radius:26px;
@@ -564,8 +559,7 @@ h2{
   border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-.map-copy h3,
-.area-card h3{
+.map-copy h3{
   margin:0 0 6px;
   font-size:22px;
 }
@@ -606,41 +600,6 @@ h2{
   height:100%;
   border:0;
   display:block;
-}
-
-.area-card{
-  padding:24px;
-}
-
-.area-card p{
-  margin:0 0 18px;
-  color:#cbd5e1;
-  line-height:1.7;
-}
-
-.area-list{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:12px;
-}
-
-.area-pill{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:12px 14px;
-  border-radius:16px;
-  background:rgba(37,99,235,0.10);
-  border:1px solid rgba(96,165,250,0.20);
-  color:#dbeafe;
-  font-weight:700;
-}
-
-.area-pill::before{
-  content:'•';
-  color:var(--gold);
-  font-size:22px;
-  line-height:1;
 }
 
 /* CONTACT */
@@ -787,14 +746,6 @@ body.modal-open{
   .coverage-shell{
     padding:24px;
   }
-
-  .coverage-grid{
-    grid-template-columns:1fr;
-  }
-
-  .area-list{
-    grid-template-columns:1fr 1fr;
-  }
 }
 
 @media(max-width:768px){
@@ -924,10 +875,6 @@ body.modal-open{
     justify-content:center;
   }
 
-  .area-list{
-    grid-template-columns:1fr;
-  }
-
   .lightbox{
     padding:14px;
   }
@@ -973,7 +920,7 @@ Showroom Finish.<br>
 </h1>
 
 <p class="hero-sub fade-up-delay">
-Premium mobile valeting in Exeter & surrounding areas.
+Premium mobile valeting in Exeter, Devon, Taunton & surrounding areas.
 </p>
 
 <a href="quote.html" class="cta fade-up-delay2 page-link">Get a Quote Now</a>
@@ -1106,10 +1053,10 @@ Premium mobile valeting in Exeter & surrounding areas.
 <div class="coverage-shell">
 
 <div class="coverage-header">
-<div class="coverage-kicker">Devon Coverage</div>
-<h2>Enter Your Postcode And Check Our Devon Coverage</h2>
+<div class="coverage-kicker">Devon & Taunton Coverage</div>
+<h2>Enter Your Postcode To Check Our Coverage</h2>
 <p>
-Our mobile valeting service covers <strong>Exeter</strong>, surrounding towns, and wider parts of <strong>Devon</strong>. Whether you're relaxing at home or need your vehicle cleaned on your driveway, we bring the valet to you. Enter your postcode below to check if you're in our current service area.
+Our mobile valeting service covers <strong>Exeter</strong>, wider parts of <strong>Devon</strong>, and <strong>Taunton</strong>. Enter only the <strong>first part</strong> of your postcode below, for example <strong>EX2</strong> or <strong>TA1</strong>, to check if you're in our current service area.
 </p>
 </div>
 
@@ -1119,14 +1066,14 @@ Our mobile valeting service covers <strong>Exeter</strong>, surrounding towns, a
   type="text"
   id="postcodeInput"
   name="postcode"
-  placeholder="Enter your postcode"
+  placeholder="Enter first part only, e.g. EX2"
   inputmode="text"
   autocomplete="postal-code"
   aria-label="Enter your postcode"
 />
 <button class="postcode-button" type="submit" aria-label="Search postcode">⌕</button>
 </form>
-<p class="postcode-note">Quickly check whether your postcode is covered.</p>
+<p class="postcode-note">Please enter only the first section of your postcode, such as EX2, EX4, TA1 or TA21.</p>
 <p class="postcode-status" id="postcodeStatus" aria-live="polite"></p>
 </div>
 
@@ -1134,8 +1081,8 @@ Our mobile valeting service covers <strong>Exeter</strong>, surrounding towns, a
 <div class="map-card">
 <div class="map-topbar">
 <div class="map-copy">
-<h3>Open In Maps</h3>
-<p>View our Devon coverage area and launch Google Maps in one tap.</p>
+<h3>Coverage Map</h3>
+<p>Our main coverage area across Devon, with Taunton also included.</p>
 </div>
 <a
   class="map-open"
@@ -1155,25 +1102,6 @@ Open in Maps ↗
   referrerpolicy="no-referrer-when-downgrade"
   allowfullscreen>
 </iframe>
-</div>
-</div>
-
-<div class="area-card">
-<h3>Devon Postcodes Covered</h3>
-<p>Current postcode coverage includes these Devon outward codes:</p>
-<div class="area-list">
-<div class="area-pill">EX1-EX24</div>
-<div class="area-pill">EX31-EX39</div>
-<div class="area-pill">PL1</div>
-<div class="area-pill">PL3-PL9</div>
-<div class="area-pill">PL15</div>
-<div class="area-pill">PL16</div>
-<div class="area-pill">PL19</div>
-<div class="area-pill">PL20</div>
-<div class="area-pill">PL21</div>
-<div class="area-pill">TQ1-TQ14</div>
-<div class="area-pill">TA21</div>
-<div class="area-pill">Devon Areas Only</div>
 </div>
 </div>
 </div>
@@ -1326,7 +1254,7 @@ const postcodeForm=document.getElementById("postcodeForm");
 const postcodeInput=document.getElementById("postcodeInput");
 const postcodeStatus=document.getElementById("postcodeStatus");
 
-const devonPostcodes=new Set([
+const coveredPostcodes=new Set([
   "EX1","EX2","EX3","EX4","EX5","EX6","EX7","EX8","EX9",
   "EX10","EX11","EX12","EX13","EX14","EX15","EX16","EX17","EX18","EX19",
   "EX20","EX21","EX22","EX23","EX24",
@@ -1335,7 +1263,7 @@ const devonPostcodes=new Set([
   "PL15","PL16","PL19","PL20","PL21",
   "TQ1","TQ2","TQ3","TQ4","TQ5","TQ6","TQ7","TQ8","TQ9",
   "TQ10","TQ11","TQ12","TQ13","TQ14",
-  "TA21"
+  "TA1","TA2","TA3","TA4","TA21"
 ]);
 
 function setPostcodeStatus(message, type){
@@ -1359,7 +1287,7 @@ postcodeForm.addEventListener("submit", e=>{
   const postcode=postcodeInput.value.trim();
 
   if(!postcode){
-    setPostcodeStatus("Please enter a postcode first.", "error");
+    setPostcodeStatus("Please enter the first part of your postcode first.", "error");
     postcodeInput.focus();
     return;
   }
@@ -1367,21 +1295,14 @@ postcodeForm.addEventListener("submit", e=>{
   const outwardCode=getOutwardCode(postcode);
 
   if(!outwardCode){
-    setPostcodeStatus("That postcode format doesn’t look right. Please check and try again.", "error");
+    setPostcodeStatus("Please enter only the first part of your postcode, for example EX2 or TA1.", "error");
     return;
   }
 
-  if(devonPostcodes.has(outwardCode)){
-    setPostcodeStatus(`Good news, ${outwardCode} is inside our current Devon coverage area. Opening Google Maps now...`, "success");
-
-    const query=encodeURIComponent(postcode + ", Devon");
-    const mapsUrl=`https://www.google.com/maps/search/?api=1&query=${query}`;
-
-    setTimeout(()=>{
-      window.open(mapsUrl, "_blank", "noopener");
-    },250);
+  if(coveredPostcodes.has(outwardCode)){
+    setPostcodeStatus(`Good news, we cover ${outwardCode}.`, "success");
   }else{
-    setPostcodeStatus(`Sorry, ${outwardCode} isn’t currently listed in our Devon service area. Please contact us if you'd like us to confirm manually.`, "error");
+    setPostcodeStatus(`Sorry, ${outwardCode} isn’t currently listed in our service area. Please contact us if you'd like us to confirm manually.`, "error");
   }
 });
 </script>
