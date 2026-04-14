@@ -73,6 +73,11 @@ header{
   border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
+.logo{
+  display:inline-flex;
+  align-items:center;
+}
+
 .logo img{
   height:75px;
   transition:0.3s;
@@ -502,18 +507,18 @@ h2{
   height:66px;
   border:none;
   border-radius:50%;
-  background:linear-gradient(135deg, #fde68a, #facc15);
-  color:#111827;
+  background:linear-gradient(135deg, #2563eb, #1d4ed8);
+  color:#eff6ff;
   font-size:28px;
   cursor:pointer;
   flex-shrink:0;
   transition:transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow:0 10px 30px rgba(250,204,21,0.32);
+  box-shadow:0 10px 30px rgba(37,99,235,0.32);
 }
 
 .postcode-button:hover{
   transform:translateY(-2px) scale(1.03);
-  box-shadow:0 16px 34px rgba(250,204,21,0.42);
+  box-shadow:0 16px 34px rgba(37,99,235,0.42);
 }
 
 .postcode-note{
@@ -620,6 +625,28 @@ h2{
   margin-top:80px;
   padding:40px 0 20px;
   border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.footer-link{
+  color:#cbd5f5;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.footer-link:hover{
+  color:#60a5fa;
+  text-shadow:0 0 10px rgba(96,165,250,0.35);
 }
 
 .credit{
@@ -898,7 +925,7 @@ body.modal-open{
 <body>
 
 <header>
-<div class="logo"><img src="logo.png" alt="JLM Valeting logo"></div>
+<a href="index.html" class="logo page-link" aria-label="Go to homepage"><img src="logo.png" alt="JLM Valeting logo"></a>
 <div class="top-info">
 <span>📧 contact@jlmvaleting.co.uk</span>
 <span>📍 Exeter, Devon</span>
@@ -920,7 +947,7 @@ Showroom Finish.<br>
 </h1>
 
 <p class="hero-sub fade-up-delay">
-Premium mobile valeting in Exeter, Devon, Taunton & surrounding areas.
+Premium mobile valeting in Devon and surrounding areas.
 </p>
 
 <a href="quote.html" class="cta fade-up-delay2 page-link">Get a Quote Now</a>
@@ -1126,7 +1153,12 @@ Open in Maps ↗
 </div>
 
 <footer>
-<p>© 2026 JLM Valeting. All rights reserved.</p>
+<p>© 2026 JLM Valeting.</p>
+
+<div class="footer-links">
+<a href="privacy.html" class="footer-link page-link">Privacy Policy</a>
+<a href="tc.html" class="footer-link page-link">T's &amp; C's</a>
+</div>
 
 <div class="credit">
 <img src="logo2.png" alt="Vernon Web Design">
